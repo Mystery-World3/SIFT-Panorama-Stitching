@@ -83,15 +83,15 @@ Berikut adalah beberapa hasil output yang tersimpan di folder `output/`:
 ### 1. Deteksi Fitur & Scale Space
 | DoG & Blob Detection | Keypoint Localization |
 | :---: | :---: |
-| ![DoG](output/blob_DoG.png) | ![Keypoints](output/keypoint.jpg) |
+| ![DoG](output/blob_DoG.png) | ![Keypoints](output/keypoint.png) |
 | *Deteksi kandidat fitur (Blob)* | *Visualisasi Skala (Lingkaran) & Orientasi* |
 
 ### 2. Feature Matching
-![Matching](output/feature_matching.jpg)
+![Matching](output/feature_matching.png)
 *Pencocokan fitur antara dua citra menggunakan Brute-Force Matcher & Lowe's Ratio Test.*
 
 ### 3. Hasil Akhir Panorama (Stitching)
-![Panorama](output/panoramic.jpg)
+![Panorama](output/panoramic.png)
 *Hasil penggabungan dua citra dengan koreksi perspektif dan perluasan kanvas (Expanded Canvas).*
 
 ## 👤 Penulis
