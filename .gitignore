@@ -3,11 +3,7 @@ pretrains/**
 data/**
 *.txt
 *.zip
-output/**
-*.pth
-*.t7
-*.pt
-*.npy
+
 .ipynb_checkpoints/**
 
 __pycache__/**
