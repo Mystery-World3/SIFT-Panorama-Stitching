@@ -30,7 +30,7 @@ Dataset yang digunakan adalah foto **Gedung Al-Fatih, Universitas Darussalam Gon
 
 1.  **Clone repositori ini:**
     ```bash
-    git clone [https://github.com/username-anda/SIFT-Panorama-Stitching.git](https://github.com/username-anda/SIFT-Panorama-Stitching.git)
+    git clone [https://github.com/Mystery-World3/SIFT-Panorama-Stitching.git](https://github.com/Mystery-World3/SIFT-Panorama-Stitching.git)
     cd SIFT-Panorama-Stitching
     ```
 
@@ -40,25 +40,24 @@ Dataset yang digunakan adalah foto **Gedung Al-Fatih, Universitas Darussalam Gon
     pip install opencv-python numpy matplotlib
     ```
 
-3.  **Persiapkan Dataset:**
-    Pastikan Anda memiliki folder bernama `images` dan letakkan dua gambar input Anda di dalamnya dengan nama `gambar1.jpeg` dan `gambar2.jpeg`.
+3.  **Struktur Folder:**
+    Pastikan Anda memiliki folder `images` untuk input dan folder `output` untuk menyimpan hasil.
     ```
     /SIFT-Panorama-Stitching
-    ├── images/
-    │   ├── gambar1.jpeg
-    │   └── gambar2.jpeg
-    ├── panoramic.py
+    ├── images/             # Letakkan gambar input di sini (gambar1.jpeg, gambar2.jpeg)
+    ├── output/             # Hasil visualisasi akan tersimpan di sini
+    ├── panoramic.py        # Script utama
     ├── ... (file python lainnya)
     └── README.md
     ```
 
-## 📂 Struktur File dan Penggunaan
+## 📂 Penjelasan Kode
 
-Berikut adalah penjelasan fungsi dari setiap file Python dalam repositori ini:
+Berikut adalah fungsi dari setiap file Python dalam repositori ini:
 
 * **`panoramic.py` (Utama)**
     * Menjalankan pipeline lengkap mulai dari deteksi fitur hingga pembuatan panorama akhir.
-    * *Output:* Menampilkan jendela perbandingan input, hasil matching, dan hasil panorama.
+    * *Output:* Menampilkan hasil stitching di folder `output/`.
     * **Cara Run:** `python panoramic.py`
 
 * **`feature_matching.py`**
@@ -79,16 +78,21 @@ Berikut adalah penjelasan fungsi dari setiap file Python dalam repositori ini:
 
 ## 📊 Hasil Visualisasi
 
-Berikut adalah beberapa hasil output dari program ini:
+Berikut adalah beberapa hasil output yang tersimpan di folder `output/`:
 
-| Deteksi Keypoint | Feature Matching |
+### 1. Deteksi Fitur & Scale Space
+| DoG & Blob Detection | Keypoint Localization |
 | :---: | :---: |
-| ![Keypoints](keypoint.jpg) | ![Matching](feature_matching.jpg) |
-| *Visualisasi Skala & Orientasi* | *Pencocokan Fitur (Lowe's Ratio Test)* |
+| ![DoG](output/blob_DoG.png) | ![Keypoints](output/keypoint.jpg) |
+| *Deteksi kandidat fitur (Blob)* | *Visualisasi Skala (Lingkaran) & Orientasi* |
 
-**Hasil Akhir Panorama (Stitching):**
-![Panorama](panoramic.jpg)
-*Hasil penggabungan dua citra dengan koreksi perspektif dan perluasan kanvas.*
+### 2. Feature Matching
+![Matching](output/feature_matching.jpg)
+*Pencocokan fitur antara dua citra menggunakan Brute-Force Matcher & Lowe's Ratio Test.*
+
+### 3. Hasil Akhir Panorama (Stitching)
+![Panorama](output/panoramic.jpg)
+*Hasil penggabungan dua citra dengan koreksi perspektif dan perluasan kanvas (Expanded Canvas).*
 
 ## 👤 Penulis
 
